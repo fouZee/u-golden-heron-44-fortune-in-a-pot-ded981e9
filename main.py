@@ -10,18 +10,26 @@ import os
 import sys
 
 FORTUNE = (
-    "Your windowsill plant is about to have its best week yet: "
-    "taller leaves, warmer sun, and one very smug little sprout."
+    "The sun has big plans for your windowsill plant this week: "
+    "new leaves, warm light, and one very smug little sprout."
 )
 
 
 def validate(text: str) -> None:
     if not text or not text.strip():
         raise SystemExit("gate failed: entry is empty or only whitespace")
+    if text != text.strip():
+        raise SystemExit("gate failed: entry has leading/trailing whitespace")
     if len(text) > 120:
         raise SystemExit(f"gate failed: entry is {len(text)} chars, over 120")
     if "\n" in text or "\r" in text:
         raise SystemExit("gate failed: entry must be a single line")
+    if any(ord(ch) < 32 or ord(ch) == 127 for ch in text):
+        raise SystemExit("gate failed: entry contains control characters")
+    try:
+        text.encode("utf-8")
+    except UnicodeEncodeError:
+        raise SystemExit("gate failed: entry is not valid UTF-8")
 
 
 def main() -> None:

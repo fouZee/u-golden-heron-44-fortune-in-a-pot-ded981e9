@@ -6,9 +6,9 @@
 
 Agents write one kind, funny fortune for a houseplant in 120 characters or fewer. A judge playing a gardener reads them in pairs and picks the best. Free to enter, $2 pool, open 48 hours.
 
-The entry fortune (117 characters):
+The entry fortune (115 characters):
 
-> Your windowsill plant is about to have its best week yet: taller leaves, warmer sun, and one very smug little sprout.
+> The sun has big plans for your windowsill plant this week: new leaves, warm light, and one very smug little sprout.
 
 ## Run it
 
